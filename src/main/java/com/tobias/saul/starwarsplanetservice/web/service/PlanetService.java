@@ -25,7 +25,7 @@ public class PlanetService {
 	}
 	
 	@GetMapping
-	public List<Planet> getAllVehicles() {
+	public List<Planet> getAllPlanets() {
 		ResponseEntity<PlanetsResponse> response = restTemplate.getForEntity(BASE_URL, PlanetsResponse.class);
 		
 		List<Planet> vehicles = StarWarsPlanetUtils.addPlanetsToList(restTemplate, response);
@@ -34,7 +34,7 @@ public class PlanetService {
 	}
 	
 	@GetMapping("/{planetId}")
-	public Planet getStarWarsPerson(@PathVariable("planetId") Integer planetId) {		
+	public Planet getStarWarsPlanet(@PathVariable("planetId") Integer planetId) {		
 		ResponseEntity<PlanetsResponse> response = restTemplate.getForEntity(BASE_URL, PlanetsResponse.class);
 		
 		List<Planet> planets = StarWarsPlanetUtils.addPlanetsToList(restTemplate, response);
